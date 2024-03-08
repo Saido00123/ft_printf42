@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <stdarg.h>
 
-int	ft_puthexa(unsigned long long n, char c);
+int	ft_puthexa(unsigned int n, char c);
 int	ft_putchar(char c);
 int	ft_putstring(char *s);
 int	ft_printf(const char *str, ...);

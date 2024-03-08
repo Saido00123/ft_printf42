@@ -29,13 +29,13 @@ static int	ft_printhelp(va_list arg, const char s)
 		len += ft_putpointer(va_arg(arg, unsigned long long));
 	}
 	else if (s == 'd' || s == 'i')
-		len += ft_putnbr(va_arg(arg, int));
+		len += ft_putnbr(va_arg(arg, long long));
 	else if (s == 'u')
 		len += ft_putunsigned(va_arg(arg, unsigned int));
 	else if (s == 'x')
-		len += ft_puthexa(va_arg(arg, long long), 'x');
+		len += ft_puthexa(va_arg(arg, unsigned int), 'x');
 	else if (s == 'X')
-		len += ft_puthexa(va_arg(arg, unsigned long long), 'X');
+		len += ft_puthexa(va_arg(arg, unsigned int), 'X');
 	else
 		len += write(1, &s, 1);
 	return (len);

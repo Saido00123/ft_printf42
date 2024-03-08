@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int	ft_puthexa(unsigned long long n, char c)
+int	ft_puthexa(unsigned int n, char c)
 {
 	char	*hexa;
 	char	*exa;
