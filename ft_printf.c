@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 static int	ft_printhelp(va_list arg, const char s)
 {
@@ -29,11 +28,11 @@ static int	ft_printhelp(va_list arg, const char s)
 		len += ft_putpointer(va_arg(arg, unsigned long long));
 	}
 	else if (s == 'd' || s == 'i')
-		len += ft_putnbr(va_arg(arg, long long));
+		len += ft_putnbr(va_arg(arg, int));
 	else if (s == 'u')
 		len += ft_putunsigned(va_arg(arg, unsigned int));
 	else if (s == 'x')
-		len += ft_puthexa(va_arg(arg, unsigned int), 'x');
+		len += ft_puthexa(va_arg(arg, long long), 'x');
 	else if (s == 'X')
 		len += ft_puthexa(va_arg(arg, unsigned int), 'X');
 	else
@@ -54,6 +53,8 @@ int	ft_printf(const char *str, ...)
 	{
 		if (str[i] == '%')
 		{
+			if (!str[i + 1])
+				return (returnvalue);
 			returnvalue += ft_printhelp(arg, str[i + 1]);
 			i++;
 		}
